@@ -63,3 +63,4 @@ Boolean() //0, NaN, "", null, undefined 이 다섯가지는 모두 거짓.
 365 === "365";
 0 === "";
 //false, 값과 자료형이 모두 일치해야 True.
+
