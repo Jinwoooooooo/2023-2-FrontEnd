@@ -2,6 +2,7 @@
 // 배열 = 객체(속성, 메소드)
 Array // 자바스크립트의 모든 자료형이 배열에 저장 가능. 
       // Array는 object형
+      // 형식이 같은 자료 여러 개가 모여 새로운 하나를 이룬 형식이다
 
 let fruits = ["apple", "kiwi", "mango"]; 
 
@@ -20,7 +21,7 @@ typeof(a[5]);
 a[0] = "KOREA";
 // [ 'KOREA', 'DIT', true, undefined, [Function (anonymous)], {} ]
 
-// 속성
+// 속성 (ex. 배열의 내용, 길이 등)
 // length 
 a.length
 // 6
@@ -28,7 +29,7 @@ fruits.length
 // 3
 
 a = [ 10, 20, 30, 40, 50 ];
-// 메소드
+// 메소드 (실행 기능)
 // method 
 // 요소 추가 
 // (배열명.push) 배열의 마지막에 추가 
