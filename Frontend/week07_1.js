@@ -4,11 +4,11 @@
 let a = [1,2,3,4,5];
 let isAllNumber = function(a) {
     for(let item of a) {
-        if(typeof(item) != 'number') {
-            return false;
+        if(typeof(item) === 'number') {
+            return true;
         }
-        return true;
     }
+    return false;
 }
 console.log(isAllNumber(a));
 
