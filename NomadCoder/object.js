@@ -8,4 +8,4 @@ player.lastName = "tomato";
 player.points = player.points + 15;
 console.log(player);
 
-
+console.log(typeof(player));

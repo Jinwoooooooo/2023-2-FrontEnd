@@ -4,10 +4,7 @@ let max = (a,b,c) => {
 console.log(max(1,2,3));
 
 
-let max3 = (a = 0, b = 0, c = 0) => {
-    return max3(max3(a, b), c);
-}
-console.log(max3(-1, -4));
+
 
 
 let max2 = (a,b) => {
@@ -18,7 +15,7 @@ let max2 = (a,b) => {
 
     return a>b ? a:b;
 }
-console.log(max2());
+console.log(max2(1,2));
 
 let max1 = (a = 0, b = 0) => {
     return a>b ? a:b;
