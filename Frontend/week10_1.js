@@ -49,6 +49,23 @@ class Kiosk {
         }
         console.log(`========================================`);
     }
+    //주문 처리
+    order(menuname, count = 1) {
+        //1. menuname과 일치하는 메뉴를 속성 menu 배열에서 찾는다.
+        //2-1 일치하는 메뉴를 찾으면 해당 매뉴의 메소드 order를 호출하여 처리한다.
+        //2-2. 일치하는 메뉴가 없으면 적절한 오류 또는 안내 메세지를 출력한다.
+        for(let menuitem of this.menu) {
+            if(menuname === menuitem.name)  {
+                return menuitem;
+                return null;
+            }
+            if(menu) {
+                menu.order(count);
+            else {
+                console.log(`메뉴판에 있는 메뉴만 주문해주세요.`);
+            }
+        }   
+    }
 }
 //======================================
 //메뉴 생성하기
@@ -64,3 +81,6 @@ DIT.addMenu(menu1);
 DIT.addMenu(menu2);
 DIT.addMenu(menu3);
 DIT.showMenu();
+console.log(`========================================`);
+DIT.order("돈까스", 7); //주문 예.
+DIT.order("김밥", 5); //주문 예.
