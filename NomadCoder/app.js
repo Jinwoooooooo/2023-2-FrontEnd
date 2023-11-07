@@ -1,7 +1,8 @@
-let age = prompt("몇 살이십니까?");
+const title = document.querySelector(".hello:first-child h1");
 
-if (age >= 20) 
-    console.log("성인입니다.");
-else 
-    console.log("성인이 아닙니다.");
-    
+function hanleTitleclick() {
+    console.log("title was clicked!");
+    title.style.color = 'red';
+}
+
+title.addEventListener("click", hanleTitleclick);
