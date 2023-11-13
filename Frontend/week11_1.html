@@ -5,45 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        table {
-            border-collapse:collapse;
+        table, th, td {
+            border-collapse: collapse;
             border: 1px solid black;
-            height: 100px;
             text-align: center;
-        }
-        th {
-            
-            width: 200px;
-            border: 1px solid black;
-        }
-        td {
-            border: 1px solid black;
+            font-size: 14px;
         }
     </style>
     <script>
         //windows 객체의 모든 속성 이름 확인하기
-        //document는 body에 작성이 된다.
-        //style="border: 1px solid black"
+        //document.write는 body에 작성이 된다.
         let countwindow = 1;
         let countlocation = 1;
         let counthistory = 1;
         let countscreen = 1;
         document.write(`=================[window]================= <br>`);
+                document.write(`
+                <table>
+                    <th>No</th>
+                    <th>속성명</th>
+                    <th>속성값</th>
+                `);
         for(let key in window) {
-            if(key === "function") {
-                document.write(`<span style="color: red;">(${window[key]})</span>`)
-            }
-            document.write(`<table>
-                <th>No</th>
-                <th>속성명</th>
-                <th>속성값</th>
+                document.write(`
                 <tr>
                     <td>${countwindow++}</td>
                     <td><b>${key}</b></td>
                     <td><span style="color: blue;">(${window[key]})</span></td>
                 </tr>
-                </table>`);
+                `);
         }
+        document.write(`</table>`);
         document.write(`=========================================== <br>`);
         document.write(`=================[location]================= <br>`);
         for(let key in location) {
@@ -63,6 +55,6 @@
     </script>
 </head>
 <body>
-    <div style="border: ;"></div>
+    
 </body>
 </html>
