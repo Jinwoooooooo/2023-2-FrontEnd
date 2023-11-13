@@ -19,7 +19,7 @@
         let countlocation = 1;
         let counthistory = 1;
         let countscreen = 1;
-        document.write(`=================[window]================= <br>`);
+        document.write(`==================[window]================== <br>`);
                 document.write(`
                 <table>
                     <th>No</th>
@@ -37,17 +37,17 @@
         }
         document.write(`</table>`);
         document.write(`=========================================== <br>`);
-        document.write(`=================[location]================= <br>`);
+        document.write(`===================[location]================== <br>`);
         for(let key in location) {
             document.write(`[${countlocation++}] <b>${key}</b> <span style="color: blue;">(${location[key]})</span> <br>`);
         }
-        document.write(`=========================================== <br>`);
-        document.write(`=================[history]================= <br>`);
+        document.write(`========================================== <br>`);
+        document.write(`===================[history]================== <br>`);
         for(let key in history) {
             document.write(`[${counthistory++}] <b>${key}</b> <span style="color: blue;">(${history[key]})</span> <br>`);
         }
         document.write(`========================================== <br>`);
-        document.write(`=================[screen]================= <br>`);
+        document.write(`===================[screen]================== <br>`);
         for(let key in screen) {
             document.write(`[${countscreen++}] <b>${key}</b> <span style="color: blue;">(${screen[key]})</span> <br>`);
         }
