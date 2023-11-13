@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse:collapse;
+            border: 1px solid black;
+            height: 100px;
+            text-align: center;
+        }
+        th {
+            
+            width: 200px;
+            border: 1px solid black;
+        }
+        td {
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        //windows 객체의 모든 속성 이름 확인하기
+        //document는 body에 작성이 된다.
+        //style="border: 1px solid black"
+        let countwindow = 1;
+        let countlocation = 1;
+        let counthistory = 1;
+        let countscreen = 1;
+        document.write(`=================[window]================= <br>`);
+        for(let key in window) {
+            if(key === "function") {
+                document.write(`<span style="color: red;">(${window[key]})</span>`)
+            }
+            document.write(`<table>
+                <th>No</th>
+                <th>속성명</th>
+                <th>속성값</th>
+                <tr>
+                    <td>${countwindow++}</td>
+                    <td><b>${key}</b></td>
+                    <td><span style="color: blue;">(${window[key]})</span></td>
+                </tr>
+                </table>`);
+        }
+        document.write(`=========================================== <br>`);
+        document.write(`=================[location]================= <br>`);
+        for(let key in location) {
+            document.write(`[${countlocation++}] <b>${key}</b> <span style="color: blue;">(${location[key]})</span> <br>`);
+        }
+        document.write(`=========================================== <br>`);
+        document.write(`=================[history]================= <br>`);
+        for(let key in history) {
+            document.write(`[${counthistory++}] <b>${key}</b> <span style="color: blue;">(${history[key]})</span> <br>`);
+        }
+        document.write(`========================================== <br>`);
+        document.write(`=================[screen]================= <br>`);
+        for(let key in screen) {
+            document.write(`[${countscreen++}] <b>${key}</b> <span style="color: blue;">(${screen[key]})</span> <br>`);
+        }
+        document.write(`=========================================== <br>`);
+    </script>
+</head>
+<body>
+    <div style="border: ;"></div>
+</body>
+</html>
