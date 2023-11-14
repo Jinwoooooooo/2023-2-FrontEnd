@@ -14,11 +14,14 @@
     </style>
     <script>
         //windows 객체의 모든 속성 이름 확인하기
-        //document.write는 body에 작성이 된다.
+        //document.write는 html의 body에 작성이 된다.
         let countwindow = 1;
         let countlocation = 1;
         let counthistory = 1;
         let countscreen = 1;
+
+        let obj = window;
+
         document.write(`==================[window]================== <br>`);
                 document.write(`
                 <table>
@@ -26,14 +29,24 @@
                     <th>속성명</th>
                     <th>속성값</th>
                 `);
-        for(let key in window) {
+        for(let key in obj) {
+            if(typeof(obj[key]) == 'function') {
                 document.write(`
                 <tr>
                     <td>${countwindow++}</td>
                     <td><b>${key}</b></td>
-                    <td><span style="color: blue;">(${window[key]})</span></td>
+                    <td><span style="color: red;">(${obj[key]})</span></td>
                 </tr>
                 `);
+            } else {
+                document.write(`
+                <tr>
+                    <td>${countwindow++}</td>
+                    <td><b>${key}</b></td>
+                    <td><span style="color: blue;">(${obj[key]})</span></td>
+                </tr>
+                `);
+            }
         }
         document.write(`</table>`);
         document.write(`=========================================== <br>`);
