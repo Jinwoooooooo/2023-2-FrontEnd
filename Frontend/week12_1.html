@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            //문서가 모두 로딩(화면에 렌더링)된 후에 실행할 내용 작성
+            //1. h1 객체 선택
+            let h1 = document.querySelector("h1");
+            h1.id = "dit";
+            //2. h1의 내용을 수정한다.
+
+            let h = document.getElementById("dit");
+            // h1.innerHTML += `<br> 자바스크립트 문서 객체 모델 프로그래밍`;
+            h.style.backgroundColor = "yellow";
+            h.style.border = "1px";
+            h.style.borderStyle = "solid";
+            h.style.padding = "5px";
+            h.style.textAlign = "center";
+
+            //세 번째 li 항목 글자색을 파란색으로 변경하는 JS 코드 작성
+            let li = document.getElementsByTagName("li");
+            li[2].style.color = "blue";
+        }
+    </script>
+</head>
+<body>
+    <h1>Javascript DOM Programming</h1>
+    <hr>
+    <ol start="0">
+        <li>JS 기초문법</li>
+        <li>함수</li>
+        <li>객체</li>
+        <li>브라우저 객체 모델(BOM)</li>
+        <li>문서 객체 모델(DOM)</li>
+    </ol>
+</body>
+</html>
