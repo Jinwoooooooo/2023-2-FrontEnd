@@ -1,15 +1,29 @@
-const loginForm = document.querySelector(".login-form");
-const loginInput = document.querySelector(".login-form input");
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
 
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
 
 function onLoginSubmit(event) {
     event.preventDefault();
     // 브라우저가 기본 동작을 실행하지 못하게 막기
     // event object는 preventDefault함수를 기본적으로 갖고 있음
-    console.log(loginInput.value);
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    //hidden이라는 class name을 더해줘서 form을 숨기고
+    const username = loginInput.value;
+    //유저의 이름을 변수로 저장
+    localStorage.setItem(USERNAME_KEY, username);
+    //localStorage에 유저의 이름을 저장
+    paintGreetings(username);
+
 }
 
-loginForm.addEventListener("submit", onLoginSubmit);
+function paintGreetings(username) {
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+}
+
  //submit 이벤트가 발생한다면, onLoginSubmit함수를 실행시킨다는 의미 
  //JS는 onLoginSubmit함수 호출시 인자를 담아서 호출함. 해당 인자는 event object를 담은 정보들
 
@@ -20,3 +34,19 @@ loginForm.addEventListener("submit", onLoginSubmit);
 //첫 arument는 지금 막 벌어진 event들에 대한 정보를 갖고 있다.
 //JS는(기본적으로)argument를 담아서 함수를 호출하는데, 이 argument가 기본 정보들을 제공하고 있다. 
 //ex) 누가 submit 주체인지, 몇 시에 submit을 했는지 등등 콘솔에 출력해보면 알 수 있음
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+
+if(savedUsername === null) {
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit", onLoginSubmit);
+    //만약 유저정보가 localStorage에 없다면 localStorage는 null값을 반환함.
+    //savedUsername 값이 null이라면, form의 hidden class명을 지움
+} else {
+    paintGreetings(savedUsername);
+    //유저정보가 있다면 greeting안에 텍스트를 추가하고,
+    //그런 다음 greeting의 HIDDEN_CLASSNAME을 지움
+}
+
+

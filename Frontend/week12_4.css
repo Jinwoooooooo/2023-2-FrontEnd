@@ -1,0 +1,14 @@
+.main {
+    text-align: center;
+}
+.sub {
+    text-align: center;
+}
+
+.mainicon {
+    width: 200px;
+}
+.subicon {
+    width: 100px;
+    margin: 10px;
+}
