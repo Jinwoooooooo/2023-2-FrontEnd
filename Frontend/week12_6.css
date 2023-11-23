@@ -1,0 +1,10 @@
+div {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    position: absolute;
+    left: 300px;
+    top: 300px;
+}
