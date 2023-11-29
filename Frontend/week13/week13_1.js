@@ -13,9 +13,11 @@ let onBlurHandler = function() {
 }
 let onKeyDownHandler = function(event) {
     if(event.keyCode == 13) {
+        if(this.value == "") {
+            return;
+        }
         appendRow(this.value);
         this.value = "";
-        
     }
 }
 //!=============================================
@@ -24,26 +26,35 @@ let onKeyDownHandler = function(event) {
 //? 클릭한 행의 앞에 새 행을 생성하고 input tag에 입력된 내용을 저장한다.
 let insertFront = function() {
      //? 입력된 내용부터 가져온다.
-     let input = gid("input");
+    let input = gid("input");
+
+    if(input.value == "") {
+        return;
+    }
 
      //? 테이블에서 클릭한 행의 인덱스를 확인한다.
-     let rowIndex = this.parentNode.rowIndex;
-     let tbody = gid("tbody");
-     let newRow = tbody.insertRow(rowIndex);
-     let cell0 = newRow.insertCell(0);
-     let cell1 = newRow.insertCell(1);
+    let rowIndex = this.parentNode.rowIndex;
+    let tbody = gid("tbody");
+    let newRow = tbody.insertRow(rowIndex);
+    let cell0 = newRow.insertCell(0);
+    let cell1 = newRow.insertCell(1);
      //? 새로 생성된 셀들의 내용을 저장한다.
-     cell0.innerHTML = `<strong>${input.value}<strong>`;
-     cell0.addEventListener("click", insertFront);
-     cell1.innerHTML = input.value.length;
+    cell0.innerHTML = `<strong>${input.value}<strong>`;
+    cell0.addEventListener("click", insertFront);
+    cell1.innerHTML = input.value.length;
 
      //? input 태그의 내용을 삭제한다.
-     input.value = "";
+    input.value = "";
 }
 //!=============================================
 let appendRow = function(newWord) {
     //? tbody 객체를 먼저 가져온다.
     let tbody = gid("tbody");
+    
+    if(newWord == "") {
+        return;
+    }
+
     //? 가져온 tbody 객체를 통해서 새 행을 하나 생성한다.
     let newRow = tbody.insertRow(tbody.rows.length);
     //? 새로 생성된 newRow 행 객체를 이용하여 행 내부에 들어갈 칼럼(cell)들을 생성한다.
