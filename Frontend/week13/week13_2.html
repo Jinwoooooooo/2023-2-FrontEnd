@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Test</title>
+    <script src="/Frontend/JQuery/jquery-3.7.1.min.js"></script>
+    <script>
+        let callback = function() {
+            alert("Effect Finished!!");
+        } 
+
+        $(document).ready(function() {
+            $("#hideH2").click(function() {
+                $("h2").fadeOut(250);
+            })
+            $("#showH2").click(function() {
+                $("h2").fadeIn(250);
+            })
+            $("#toggleH2").click(function() {
+                $("h2").fadeToggle(250);
+            })
+            $("#fadeToH2").click(function() {
+                $("h2").fadeTo(500, 0.1);
+            })
+            //=====================================
+            //h2를 클릭하면 클릭한 h2태그만 화면에서 사라지게 한다.
+            $("h2").click(function() {
+                $(this).hide(500);
+            })
+        })
+        //JQuery Selector
+        //https://www.w3schools.com/jquery/trysel.asp
+    </script>
+</head>
+<body>
+    <h1>JQuery Test</h1>
+    <hr>
+    <button id="hideH2">fadeOut h2</button>
+    <button id="showH2">fadeIn h2</button>
+    <button id="toggleH2">fadeToggle h2</button>
+    <button id="fadeToH2">fadeTo h2</button>
+    <hr>
+    <h2>Hide and Show Effect</h2>
+    <h2>Toggling Available</h2>
+    <h2>개별적 동작 지정도 쉽게 가능</h2>
+</body>
+</html>

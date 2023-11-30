@@ -13,7 +13,7 @@ let onBlurHandler = function() {
 }
 let onKeyDownHandler = function(event) {
     if(event.keyCode == 13) {
-        if(this.value == "") {
+        if(this.value.trim() == "") {
             return;
         }
         appendRow(this.value);
@@ -28,12 +28,12 @@ let insertFront = function() {
      //? 입력된 내용부터 가져온다.
     let input = gid("input");
 
-    if(input.value == "") {
+    if(input.value.trim() == "") {
         return;
     }
 
      //? 테이블에서 클릭한 행의 인덱스를 확인한다.
-    let rowIndex = this.parentNode.rowIndex;
+    let rowIndex = this.parentNode.rowIndex -1;
     let tbody = gid("tbody");
     let newRow = tbody.insertRow(rowIndex);
     let cell0 = newRow.insertCell(0);
@@ -47,14 +47,20 @@ let insertFront = function() {
     input.value = "";
 }
 //!=============================================
+//? 어떤 행의 두 번째 셀(칼럼)을 클릭하면, 해당 행을 삭제한다.
+let deleteRow = function() {
+
+    //? 테이블에서 클릭한 행의 인덱스를 확인한다.
+    let rowIndex = this.parentNode.rowIndex -1;
+    //? 해당 행을 삭제한다.
+    gid("tbody").deleteRow(rowIndex);
+    cell1.addEventListener("click", deleteRow);
+}
+//!=============================================
 let appendRow = function(newWord) {
     //? tbody 객체를 먼저 가져온다.
     let tbody = gid("tbody");
     
-    if(newWord == "") {
-        return;
-    }
-
     //? 가져온 tbody 객체를 통해서 새 행을 하나 생성한다.
     let newRow = tbody.insertRow(tbody.rows.length);
     //? 새로 생성된 newRow 행 객체를 이용하여 행 내부에 들어갈 칼럼(cell)들을 생성한다.
@@ -63,8 +69,9 @@ let appendRow = function(newWord) {
     //? 새로 생성된 셀들의 내용을 저장한다.
     cell0.innerHTML = `<strong>${newWord}<strong>`;
     cell0.addEventListener("click", insertFront);
-    cell1.innerHTML = newWord.length;
 
+    cell1.innerHTML = newWord.length;
+    cell1.addEventListener("click", deleteRow);
 }
 //!=============================================
 window.onload = function() {
