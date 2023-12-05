@@ -13,10 +13,22 @@
     margin: 10px;
 }
 
+.overBox {
+    background-color: rgb(117, 160, 100);
+}
+
+.overCard {
+    background-color: rgb(27, 87, 27);
+}
+
 .card {
-    border: 1px solid rgb(185, 185, 185);
+    border: 1px solid rgb(14, 102, 48);
     background-color: azure;
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
+}
+
+.draggingCard {
+    border-color: rgb(0, 99, 25);
 }
