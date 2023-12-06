@@ -46,6 +46,7 @@ function onDragLeaveCard(event) {
 
 function onDragOverBox(event) {
     event.preventDefault(); //? 웹 브라우저의 기본 동작을 막는 메소드
+    console.log(this.InnerHTML);
     dragOverBox = this;
     this.classList.add("overBox");
 }
@@ -54,7 +55,6 @@ function onDragLeaveBox(event) {
     this.classList.remove("overBox");
 }
 function onDropBox(event) {
-    event.preventDefault();
     this.appendChild(draggingCard); 
     //? Drop 이벤트가 발생한 box 객체(this)의 자식 노드로 드래깅 중인 객체를 연결한다.
 }
