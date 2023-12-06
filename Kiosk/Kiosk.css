@@ -2,24 +2,63 @@ body {
     text-align: center;
     margin: 0 auto;
     max-width: 1000px;
+    background-color: #f5f5f5;
 }
-.headerImg {
-    width: 1000px;
-    height: 250px;
+
+#clock {
+    color: white;
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    font-size: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+header {
     position: fixed;
     display: flex;
     top: 0px;
 }
 
+.headerImg {
+    width: 1000px;
+    height: 125px;
+    background-color: #ffffff59;
+    filter: brightness(35%);
+}
+
 .movieList {
     border: 1px solid #ccc;
     background-color: #fff;
-    margin-top: 250px;
-    color: #fff;
+    margin-top: 150px;
+    color: #000; /* Change text color for better visibility */
+}
+
+.List {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.movieItem {
+    text-align: center;
 }
 
 .poster {
     width: 250px;
     height: 350px;
-    margin: 25px;
+}
+
+.showTime {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 30px;
+    color: #777777;
+    text-align: left;
+    margin: 5px;
+    margin-bottom: 40px;
+}
+
+.poster {
+    width: 250px;
+    height: 350px;
 }
