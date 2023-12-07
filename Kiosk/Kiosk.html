@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kiosk</title>
+    <script src="/JQuery/jquery-3.7.1.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Kiosk.css">
 </head>
 <body>
+    <!--! header Zone -->
+    <!--? header Zone -->
+    <!--* header Zone -->
     <header>
         <p id="clock">00:00:00</p>
         <video class="headerVideo" src="/Video/soheeAD.mp4" autoplay>
     </header>
+
+
+    <!--! movieList Zone -->
+    <!--? movieList Zone -->
+    <!--* movieList Zone -->
     <div class="movieList">
         <div class="List">
             <div class="movieItem">
@@ -29,7 +38,6 @@
                     <p class="showTime">10:00</p>
                     <p class="movieName">오펜하이머</p>
                 </div>
-                
             </div>
             <div class="movieItem">
                 <img class="poster" src="/Img/napoleon.jpg">
@@ -151,6 +159,30 @@
             </div>
         </div>
     </div>
-    <script src="/Kiosk/Kiosk.js"></script>
+
+    <!--! Ticket Zone -->
+    <!--? Ticket Zone -->
+    <!--* Ticket Zone -->
+    <div class="Ticket">
+        <div class="top">
+            <img src="/Img/back.png" class="backicon">
+            <p>티켓구매</p>
+            <img src="/Img/home.png" class="homeicon">
+        </div>
+        <div class="ticketInfo">
+            <img src="" class="ticketImg">
+            <div class="ticketInfoText">
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+        <div class="justline"></div>
+        <p class="ticketGuide">
+            관람 인원수를 선택해 주세요.<br>
+            <span style="color: #777777;">인원수 선택은 일반, 청소년을 더해 <span style="color: purple;">최대 8매</span>까지 가능합니다.</span>
+        </p>
+    </div>
+    <script src="/Kiosk/header.js"></script>
+    <script src="/Kiosk/main.js"></script>
 </body>
 </html>
