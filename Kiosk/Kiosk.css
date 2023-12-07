@@ -6,7 +6,7 @@ body {
 body::-webkit-scrollbar {
     /*? 스크롤 바 없애는 CSS 코드 */
     display: none;
-  }
+}
 
 /*! ====================================================*/
 /*! Header Zone
@@ -120,7 +120,7 @@ header {
 
 .ticketImg {
     width: 150px;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-left: 65px;
     margin-right: 30px;
     border-radius: 10px;
@@ -137,14 +137,47 @@ header {
 
 .justline {
     border: 1px solid #dddddd;
-    border-bottom-style:none;
-    margin-top: 40px;
+    border-bottom-style: none;
+    margin-top: 50px;
 }
 
 .ticketGuide {
     font-family: 'Noto Sans KR', sans-serif;
     text-align: center;
-    font-size: 15px;
+    font-size: 19px;
+    margin-bottom: 65px;
 }
+.howmanypeople {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-left: 40px;
+    margin-right: 70px;
+    color: #777777;
+    font-size: 20px;
+}
+
+.adult {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.teenager {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    background-color: #eeeeee;
+}
+
 /*!====================================================*/
 
