@@ -1,3 +1,7 @@
+body {
+    text-align: center;
+}
+
 .contanier {
     background-color: rgb(140, 201, 130);
     padding: 20px;
@@ -17,16 +21,16 @@
     background-color: rgb(117, 160, 100);
 }
 
-.overCard {
-    background-color: rgb(27, 87, 27);
-}
-
 .card {
     border: 1px solid rgb(14, 102, 48);
     background-color: azure;
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
+}
+
+.overCard {
+    background-color: rgb(147, 190, 147);
 }
 
 .draggingCard {

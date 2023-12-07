@@ -31,6 +31,12 @@ function onDragEndCard(event) {
         dragOverBox.classList.remove("overBox");
         dragOverBox = null;
     }
+    //? dragOver 상태에서 드래깅이 종료되면 dragLeave 이벤트가 발생하지 않고
+    //? 종료되었기 때문에 card 배경색이 복구되지 않는다. 그러므로 추가 정리가 필요.
+    if(dragOverCard != null) {
+        dragOverCard.classList.remove("overCard");
+        dragOverCard = null;
+    }
 }
 function onDragOverCard(event) {
     event.preventDefault(); //? 웹 브라우저의 기본 동작을 막는 메소드
@@ -40,6 +46,7 @@ function onDragOverCard(event) {
 function onDragLeaveCard(event) {
     this.classList.remove("overCard");
     dragOverCard = null;
+    
 }
 //!======================================================
 //* Box Event Handler
@@ -55,8 +62,18 @@ function onDragLeaveBox(event) {
     this.classList.remove("overBox");
 }
 function onDropBox(event) {
-    this.appendChild(draggingCard); 
-    //? Drop 이벤트가 발생한 box 객체(this)의 자식 노드로 드래깅 중인 객체를 연결한다.
+    event.preventDefault();
+    //? 카드 위에 놓은 것인지, 아니면 박스 위에 놓은 것인지 확인이 필요함.
+    //? 드래깅 중인 카드에 반응(dragOver event)한 카드가 있으면 해당 카드가 우선 적용된다.
+    if(dragOverCard) { //? 카드 위에 놓은 경우
+        //? 드래깅 중인 카드(draggingCard)를 dragOverCard 앞에 삽입한다.
+        this.insertBefore(draggingCard, dragOverCard);
+    } else { //? 박스 위에 놓은 경우
+        this.appendChild(draggingCard);  
+        //? Drop 이벤트가 발생한 box 객체(this)의 자식 노드로 드래깅 중인 객체를 연결한다.
+    }
+    
+
 }
 //!======================================================
 $(document).ready(function() {
