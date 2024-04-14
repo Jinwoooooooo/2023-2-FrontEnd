@@ -84,5 +84,4 @@ DIT.addMenu(menu3);
 DIT.order("김치찌개", 1); //주문 예.
 DIT.order("돈까스", 5); //주문 예.
 DIT.order("라면", 49); //주문 예.
-DIT.order("김밥", 5);
 DIT.showMenu();

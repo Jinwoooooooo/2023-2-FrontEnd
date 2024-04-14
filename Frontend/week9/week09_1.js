@@ -14,7 +14,7 @@ let stname = "My name";
 
 console.log(student.나이);
 
-console.log(student["code"]);
+console.log(student.code);
 console.log(student["My name"]);
 
 student["My name"] = "한소희";
